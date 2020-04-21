@@ -18,8 +18,7 @@ class RezervacijaController extends AutorizacijaController
         //prvo dođu silne kontrole
         if(Rezervacija::delete()){
             header('location: /rezervacija/index');
-        }
-        
+        } 
     }
 
     public function promjena()
@@ -52,8 +51,8 @@ class RezervacijaController extends AutorizacijaController
             return;
         }
 
-        $IDNoveRezervacije=Rezervacija::create($_POST['hotel']);
-        $rezervacija = Rezervacija::read($IDNoveRezervacije);
+        $IDNovaRezervacije=Rezervacija::create($_POST['hotel'],$_POST['gost']);
+        $rezervacija = Rezervacija::read($IDNovaRezervacije);
         $this->detalji($rezervacija);
 
         

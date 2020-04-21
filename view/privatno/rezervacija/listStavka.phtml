@@ -1,7 +1,8 @@
 <li>
-    <?php echo $red->rIme . ' ' . $red->rPrezime ?> 
-    &lt;<?php echo $red->email ?>&gt;
+    <?php echo $red->ID_rezervacija . ' --> ' . $red->rHotel . ' ' .$red->rDatumOd . ' ' . $red->rDatumDo?> 
+    <?php echo '<br>' ?>
         <a href="/rezervacija/promjena?ID_rezervacija=<?php echo $red->ID_rezervacija ?>"><i title="Promjeni" class="fas fa-edit"></i></a> 
-        <a onclick="return confirm('Sigurno obrisati <?php echo $red->rIme . ' ' . $red->rPrezime ?> ');"
+        <a onclick="return confirm('Sigurno obrisati <?php echo $red->ID_rezervacija . ' ' . $red->rDatumOd . ' ' . $red->rDatumDo ?> ');"
         href="/rezervacija/obrisi?ID_rezervacija=<?php echo $red->ID_rezervacija ?>"><i title="Obriši" class="fas fa-trash" style="color: red;"></i></a>
+    <?php echo '<br>' ?>
 </li>

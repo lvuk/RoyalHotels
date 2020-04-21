@@ -8,7 +8,7 @@
             <select name="hotel" id="hotel">
                 <?php foreach($hoteli as $hotel): ?>
                     <option <?php 
-                        if($hotel->ID_hotel==$rezervacija->zHotelID){
+                        if($hotel->ID_hotel==$rezervacija->rHotelID){
                             echo 'selected="selected"';
                         }
                         
@@ -32,23 +32,23 @@
                 <?php endforeach;?>
             </select>
 
-            <label for="datumod">Datum dd</label>
-            <input type="text" name="datumod" id="datumod" value="<?php echo $rezervacija->zIme ?>">
-
+            <label for="datumod">Datum od</label>
+            <input type="date" id="datumod" name="datumod" value="<?php echo $rezervacija->rDatumDo ?>"">
+            
             <label for="datumdo">Datum do</label>
-            <input type="text" name="datumdo" id="datumdo" value="<?php echo $rezervacija->zPrezime ?>">
+            <input type="date" id="datumdo" name="datumdo" value="<?php echo $rezervacija->rDatumDo ?>"">
 
             <label for="brojgostiju">Broj gostiju u sobi</label>
-            <input type="text" name="brojgostiju" id="brojgostiju" value="<?php echo $rezervacija->zIBAN ?>">
+            <input type="text" name="brojgostiju" id="brojgostiju" value="<?php echo $rezervacija->rBrojGostiju ?>">
 
             <label for="placeno">Placeno</label>
-              <select name="placeno" id="placeno">
+              <select name="placeno" id="placeno" value="Odaberi">
                 <option value="da">Da</option>
                 <option value="ne">Ne</option>
               </select>
 
               <label for="soba">Soba</label>
-              <select name="soba" id="soba">
+              <select name="soba" id="soba" value="Vrsta sobe">
                 <option value="jednokrevetna">Jednokrevetna</option>
                 <option value="dvokrevetna">Dvokrevetna</option>
                 <option value="trokrevetna">Trokrevetna</option>
@@ -58,7 +58,7 @@
               <input type="hidden" name="ID_rezervacija" 
                  value="<?php echo $rezervacija->ID_rezervacija ?>">
                     
-               
+            
             
             <div class="grid-x grid-margin-x">
                 <div class="large-6 cell">
@@ -72,3 +72,5 @@
         </form>
     </div>
 </div>
+
+

@@ -10,7 +10,7 @@ class Rezervacija
         select a.ID_rezervacija, a.rBrojGostiju,
         a.rDatumOd, a.rDatumDo, a.rSoba, a.rPlaceno,
         b.hNaziv as rHotel,
-        concat(c.gIme, \' \',gPrezime) as rGost
+        c.gPrezime as rGost
         from rezervacija a 
         inner join hotel b on a.rHotelID = b.ID_hotel
         left join gost c on a.rGostID = c.ID_gost;
@@ -34,14 +34,17 @@ class Rezervacija
         return $izraz->fetch();
     }
 
-    public static function create($hotel)
+    public static function create($hotel, $gost)
     {
         $veza = DB::getInstanca();
         $izraz=$veza->prepare('insert into rezervacija
         (rHotelID,rDatumOD,rDatumDO,rSoba,rGostID,rBrojGostiju,rPlaceno) values 
         (:hotel,\'\',\'\',\'\',:gost,\'\',\'\')');
       
-        $izraz->execute(['hotel'=>$hotel]);
+        $izraz->execute(['hotel'=>$hotel,
+                         'gost'=>$gost     
+        ]);
+        return $veza->lastInsertId();
     }
 
     public static function delete()
@@ -63,7 +66,16 @@ class Rezervacija
         set rHotelID=:hotel,
         rDatumOd=:datumod,rDatumDo=:datumdo,rSoba=:soba, rGostID=:gost,
         rBrojGostiju=:brojgostiju, rPlaceno:placeno where ID_rezervacija=:ID_rezervacija');
-        $izraz->execute($_POST);
+        $izraz->execute([
+            'hotel' => $_POST['hotel'],
+            'datumod' => $_POST['datumod'],
+            'datumdo' => $_POST['datumdo'],
+            'soba' => $_POST['soba'],
+            'gost' => $_POST['gost'],
+            'brojgostiju' => $_POST['brojgostiju'],
+            'placeno' => $_POST['placeno'],
+            'ID_rezervacija' => $_POST['ID_rezervacija']
+        ]);
     }
 
 }
