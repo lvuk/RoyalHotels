@@ -1,0 +1,74 @@
+
+<div class="grid-x grid-margin-x">
+    <div class="large-6 cell">
+        <form method="POST"
+        action="/rezervacija/promjeni">
+
+            <label for="hotel">Odabrani hotel</label>
+            <select name="hotel" id="hotel">
+                <?php foreach($hoteli as $hotel): ?>
+                    <option <?php 
+                        if($hotel->ID_hotel==$rezervacija->zHotelID){
+                            echo 'selected="selected"';
+                        }
+                        
+                        ?> value="<?php echo $hotel->ID_hotel ?>">
+                        <?php echo $hotel->hNaziv ?>
+                    </option>
+                <?php endforeach;?>
+            </select>
+            
+            <label for="gost">Odaberi gosta</label>
+            <select name="gost" id="gost">
+                <?php foreach($gosti as $gost): ?>
+                    <option <?php 
+                        if($gost->ID_gost==$rezervacija->rGostID){
+                            echo 'selected="selected"';
+                        }
+                        
+                        ?> value="<?php echo $gost->ID_gost ?>">
+                        <?php echo $gost->gPrezime ?>
+                    </option>
+                <?php endforeach;?>
+            </select>
+
+            <label for="datumod">Datum dd</label>
+            <input type="text" name="datumod" id="datumod" value="<?php echo $rezervacija->zIme ?>">
+
+            <label for="datumdo">Datum do</label>
+            <input type="text" name="datumdo" id="datumdo" value="<?php echo $rezervacija->zPrezime ?>">
+
+            <label for="brojgostiju">Broj gostiju u sobi</label>
+            <input type="text" name="brojgostiju" id="brojgostiju" value="<?php echo $rezervacija->zIBAN ?>">
+
+            <label for="placeno">Placeno</label>
+              <select name="placeno" id="placeno">
+                <option value="da">Da</option>
+                <option value="ne">Ne</option>
+              </select>
+
+              <label for="soba">Soba</label>
+              <select name="soba" id="soba">
+                <option value="jednokrevetna">Jednokrevetna</option>
+                <option value="dvokrevetna">Dvokrevetna</option>
+                <option value="trokrevetna">Trokrevetna</option>
+                <option value="cetverokrevetna">Cetverokrevetna</option>
+              </select>
+  
+              <input type="hidden" name="ID_rezervacija" 
+                 value="<?php echo $rezervacija->ID_rezervacija ?>">
+                    
+               
+            
+            <div class="grid-x grid-margin-x">
+                <div class="large-6 cell">
+                    <a href="/rezervacija/index" class="alert button expanded">Odustani</a>
+                </div>
+                <div class="large-6 cell">
+                    <input type="submit" class="button expanded" value="Promjeni/dodaj rezervaciju"></input>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

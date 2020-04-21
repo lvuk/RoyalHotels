@@ -1,0 +1,57 @@
+<form class="log-in-form" method="POST"
+action="/gost/promjeni">
+
+  <label>Ime
+    <input type="text" id="ime" name="ime" value="<?php 
+    echo $gost->gIme;
+    ?>">
+  </label>
+
+  <label>Prezime
+    <input type="text" id="prezime" name="prezime" value="<?php 
+    echo $gost->gPrezime;
+    ?>">
+  </label>
+
+  <label>Adresa
+    <input type="text" id="adresa" name="adresa" value="<?php 
+    echo  $gost->gAdresa;
+    ?>">
+  </label>
+  
+  <label>Grad
+    <input type="text" id="grad" name="grad" value="<?php 
+    echo $gost->gGrad;
+    ?>">
+  </label>
+
+  <label>Drzava
+    <input type="text" id="drzava" name="drzava" value="<?php 
+    echo $gost->gDrzava; 
+    ?>">
+  </label>
+
+  <label>Kontakt
+    <input type="text" id="kontakt" name="kontakt" value="<?php 
+    echo $gost->gKontakt;
+    ?>">
+  </label>
+  
+  <label for="spol">Spol</label>
+  <select name="spol" id="spol">
+    <option value="m">M</option>
+    <option value="z">Ž</option>
+  </select>
+
+  <div class="grid-x grid-margin-x">
+    <div class="large-6 cell">
+      <a href="/gost/index" class="alert button expanded">Odustani</a>
+    </div>
+    <div class="large-6 cell">
+      <input type="submit" class="button expanded" value="Promjeni gosta"></input>
+    </div>
+  </div>
+  <input type="hidden" name="sifra" 
+  value="<?php echo $gost->ID_gost ?>">
+</form>
+<?php echo $poruka; ?>

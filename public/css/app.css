@@ -1,0 +1,21 @@
+body{
+    background-image: url(https://wallpaperset.com/w/full/8/5/a/26663.jpg);
+}
+
+.callout{
+    background-color: rgba(127, 127, 146, 0.404);
+    color: whitesmoke;
+}
+
+#email{
+    color: black;
+}
+
+#password{
+    color: white;
+}
+
+#hotel{
+    color: black;
+}
+

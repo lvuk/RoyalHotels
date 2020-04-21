@@ -1,0 +1,38 @@
+<div class="grid-x grid-margin-x">
+    <form action="/zaposlenik/novi" method="POST">
+        <div class="large-3 cell">
+            <select name="hotel" id="hotel" class="form-control mr-sm-2">
+                    <option value="0">Odaberite hotel</option>
+                    <?php foreach($hoteli as $hotel): ?>
+                        <option value="<?php echo $hotel->ID_hotel ?>">
+                            <?php echo $hotel->hNaziv ?>
+                        </option>
+                    <?php endforeach;?>
+            </select>
+        </div>
+        
+        <div class="large-9 cell" style="padding-left: 5px;">
+            <input type="submit" class="success button expanded"
+            value="Dodaj novog zaposlenika na odabrani hotel"
+            style="border: 0px;">
+        </div>
+    
+    </form>
+</div>
+
+
+    <div class="grid-x grid-margin-x">
+        <?php 
+        foreach($podaci as $red){
+            include 'gridStavka.phtml';
+        }
+        ?> 
+    </div>
+        
+<?php if(isset($alertPoruka)): ?>
+    <script>
+        	alert("<?php echo $alertPoruka ?>");
+    </script>
+<?php endif;?>
+
+

@@ -1,0 +1,11 @@
+<div class="large-4 cell" style="text-align: center;">
+    <div class="callout">
+        <h1><?php echo $red->hNaziv ?>
+        <br /> <?php echo $red->hZvjezdice ?></h1>
+        <?php echo $red->hGlavniBrojTelefona ?>
+        <hr />
+        <a href="/hotel/promjena?ID_hotel=<?php echo $red->ID_hotel ?>"><i title="Promjeni" class="fas fa-edit fa-2x"></i></a> 
+        <a onclick="return confirm('Sigurno obrisati <?php echo $red->hNaziv ?>');"
+         href="/hotel/obrisi?ID_hotel=<?php echo $red->ID_hotel ?>"><i title="Obriši" class="fas fa-trash fa-2x" style="color: red;"></i></a>
+    </div>
+</div>

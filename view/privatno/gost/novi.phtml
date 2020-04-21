@@ -1,0 +1,60 @@
+<form class="log-in-form" method="POST"
+action="/gost/dodajnovi">
+
+  <label>Ime
+    <input type="text" id="ime" name="ime" value="<?php 
+    echo isset($_POST['gIme']) ? $_POST['gIme'] : '' 
+    ?>">
+  </label>
+
+  <label>Prezime
+    <input type="text" id="prezime" name="prezime" value="<?php 
+    echo isset($_POST['gPrezime']) ? $_POST['gPrezime'] : '' 
+    ?>">
+  </label>
+
+    
+  <label>Adresa
+    <input type="text" id="adresa" name="adresa" value="<?php 
+    echo isset($_POST['gAdresa']) ? $_POST['gAdresa'] : '' 
+    ?>">
+  </label>
+
+    
+  <label>Grad
+    <input type="text" id="grad" name="grad" value="<?php 
+    echo isset($_POST['gGrad']) ? $_POST['gGrad'] : '' 
+    ?>">
+  </label>
+
+  <label>Drzava
+    <input type="text" id="drzava" name="drzava" value="<?php 
+    echo isset($_POST['gDrzava']) ? $_POST['gDrzava'] : '' 
+    ?>">
+  </label>
+
+  <label>Kontakt
+    <input type="text" id="kontakt" name="kontakt" value="<?php 
+    echo isset($_POST['gKontaktBroj']) ? $_POST['gKontaktBroj'] : '' 
+    ?>">
+  </label>
+  
+  <label for="spol">Spol</label>
+  <select name="spol" id="spol">
+    <option value="m">M</option>
+    <option value="z">Ž</option>
+  </select>
+
+
+
+  <div class="grid-x grid-margin-x">
+    <div class="large-6 cell">
+      <a href="/gost/index" class="alert button expanded">Odustani</a>
+    </div>
+    <div class="large-6 cell">
+      <input type="submit" class="button expanded" value="Dodaj gosta"></input>
+    </div>
+  </div>
+  
+</form>
+<?php echo $poruka; ?>

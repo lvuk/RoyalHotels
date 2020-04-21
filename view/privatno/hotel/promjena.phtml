@@ -1,0 +1,68 @@
+<form class="log-in-form" method="POST"
+action="/hotel/promjeni">
+ 
+ <label>Naziv Hotela
+    <input type="text" id="naziv" name="naziv" value="<?php 
+    echo $hotel->hNaziv;
+    ?>">
+  </label>
+
+  <label>Adresa Hotela
+    <input type="text" id="adresa" name="adresa" value="<?php 
+    echo $hotel->hAdresa;
+    ?>">
+  </label>
+
+  <label>Grad
+    <input type="text" id="grad" name="grad" value="<?php 
+    echo $hotel->hGrad;
+    ?>">
+  </label>
+
+  <label>Drzava
+    <input type="text" id="drzava" name="drzava" value="<?php 
+    echo  $hotel->hDrzava;
+    ?>">
+  </label>
+
+  <label>Postanski broj
+    <input type="text" id="postanskibroj" name="postanskibroj" value="<?php 
+    echo  $hotel->hPostanskiBroj;
+    ?>">
+  </label>
+
+  <label>Glavni broj telefona
+    <input type="text" id="glavnibrojtelefona" name="glavnibrojtelefona" value="<?php 
+    echo $hotel->hGlavniBrojTelefona;
+    ?>">
+  </label>
+
+  <label for="zvjezdice">Broj zvjezdica</label>
+  <select name="zvjezdice" id="zvjezdice">
+    <option value="1">*</option>
+    <option value="2">**</option>
+    <option value="3">***</option>
+    <option value="4">****</option>
+    <option value="5">*****</option>
+  </select>
+
+  <label>Maksimalan broj gostiju
+    <input type="text" id="maxbrojgostiju" name="maxbrojgostiju" value="<?php 
+    echo $hotel->hMaxBrojGostiju;
+    ?>">
+  </label>
+
+
+  <div class="grid-x grid-margin-x">
+    <div class="large-6 cell">
+      <a href="/hotel/index" class="alert button expanded">Odustani</a>
+    </div>
+    <div class="large-6 cell">
+      <input type="submit" class="button expanded" value="Promjeni hotel"></input>
+    </div>
+  </div>
+  <input type="hidden" name="sifra" 
+  value="<?php echo $hotel->ID_hotel ?>">
+  
+</form>
+<?php echo $poruka; ?>

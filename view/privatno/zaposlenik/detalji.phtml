@@ -1,0 +1,57 @@
+
+<div class="grid-x grid-margin-x">
+    <div class="large-6 cell">
+        <form method="POST"
+        action="/zaposlenik/promjeni">
+
+            <label for="hotel">Odabrani hotel</label>
+            <select name="hotel" id="hotel">
+                <?php foreach($hoteli as $hotel): ?>
+                    <option <?php 
+                        if($hotel->ID_hotel==$zaposlenik->zHotelID){
+                            echo 'selected="selected"';
+                        }
+                        
+                        ?> value="<?php echo $hotel->ID_hotel ?>">
+                        <?php echo $hotel->hNaziv ?>
+                    </option>
+                <?php endforeach;?>
+            </select>
+
+            <label for="ime">Ime</label>
+            <input type="text" name="ime" id="ime" value="<?php echo $zaposlenik->zIme ?>">
+
+            <label for="prezime">prezime</label>
+            <input type="text" name="prezime" id="prezime" value="<?php echo $zaposlenik->zPrezime ?>">
+
+            <label for="iban">IBAN</label>
+            <input type="text" name="iban" id="iban" value="<?php echo $zaposlenik->zIBAN ?>">
+
+            <label for="adresa">Adresa</label>
+            <input type="text" name="adresa" id="adresa" value="<?php echo $zaposlenik->zAdresa ?>">
+
+            <label for="brojmobitela">Broj mobitela</label>
+            <input type="text" name="brojmobitela" id="brojmobitela" value="<?php echo $zaposlenik->zBrojMobitela ?>">  
+
+            <label for="spol">Spol</label>
+              <select name="spol" id="spol">
+                <option value="m">M</option>
+                <option value="z">Ž</option>
+              </select>
+  
+              <input type="hidden" name="ID_zaposlenik" 
+                 value="<?php echo $zaposlenik->ID_zaposlenik ?>">
+
+            
+            <div class="grid-x grid-margin-x">
+                <div class="large-6 cell">
+                    <a href="/zaposlenik/index" class="alert button expanded">Odustani</a>
+                </div>
+                <div class="large-6 cell">
+                    <input type="submit" class="button expanded" value="Promjeni zaposlenika"></input>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

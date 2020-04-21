@@ -1,0 +1,66 @@
+<form class="log-in-form" method="POST"
+action="/hotel/dodajnovi">
+ 
+ <label>Naziv Hotela
+    <input type="text" id="naziv" name="naziv" value="<?php 
+    echo isset($_POST['hNaziv']) ? $_POST['hNaziv'] : '' 
+    ?>">
+  </label>
+
+  <label>Adresa Hotela
+    <input type="text" id="adresa" name="adresa" value="<?php 
+    echo isset($_POST['hAdresa']) ? $_POST['hAdresa'] : '' 
+    ?>">
+  </label>
+
+  <label>Grad
+    <input type="text" id="grad" name="grad" value="<?php 
+    echo isset($_POST['hGrad']) ? $_POST['hGrad'] : '' 
+    ?>">
+  </label>
+
+  <label>Drzava
+    <input type="text" id="drzava" name="drzava" value="<?php 
+    echo isset($_POST['hDrzava']) ? $_POST['gDrzava'] : '' 
+    ?>">
+  </label>
+
+  <label>Postanski broj
+    <input type="text" id="postanskibroj" name="postanskibroj" value="<?php 
+    echo isset($_POST['hPostanskiBroj']) ? $_POST['hPostanskiBroj'] : '' 
+    ?>">
+  </label>
+
+  <label>Glavni broj telefona
+    <input type="text" id="glavnibrojtelefona" name="glavnibrojtelefona" value="<?php 
+    echo isset($_POST['hGlavniBrojTelefona']) ? $_POST['hGlavniBrojTelefona'] : '' 
+    ?>">
+  </label>
+
+  <label for="zvjezdice">Broj zvjezdica</label>
+  <select name="zvjezdice" id="zvjezdice">
+    <option value="1">*</option>
+    <option value="2">**</option>
+    <option value="3">***</option>
+    <option value="4">****</option>
+    <option value="5">*****</option>
+  </select>
+
+  <label>Maksimalan broj gostiju
+    <input type="text" id="maxbrojgostiju" name="maxbrojgostiju" value="<?php 
+    echo isset($_POST['hMaxBrojGostiju']) ? $_POST['hMaxBrojGostiju'] : '' 
+    ?>">
+  </label>
+
+
+  <div class="grid-x grid-margin-x">
+    <div class="large-6 cell">
+      <a href="/hotel/index" class="alert button expanded">Odustani</a>
+    </div>
+    <div class="large-6 cell">
+      <input type="submit" class="button expanded" value="Dodaj hotel"></input>
+    </div>
+  </div>
+  
+</form>
+<?php echo $poruka; ?>
