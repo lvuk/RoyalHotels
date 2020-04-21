@@ -17,9 +17,7 @@ class Gost
     {
         $veza = DB::getInstanca();
         $izraz = $veza->prepare('
-        select ID_gost, 
-        gIme, gPrezime, gAdresa, gGrad,
-        gKontaktBroj from gost
+        select * from gost
         where ID_gost=:ID_gost');
         $izraz->execute(['ID_gost'=>$sifra]);
         return $izraz->fetch();
@@ -61,22 +59,5 @@ class Gost
         gKontaktBroj=:kontakt
         where ID_gost=:sifra');
         $izraz->execute($_POST);
-    }
-
-    public static function trazi($uvjet)
-    {
-        
-        $veza = DB::getInstanca();
-        $izraz = $veza->prepare('
-        
-        select ID_gost, gIme, gPrezime, gAdresa,
-        gGrad, gDrzava, gSpol from gost
-        where concat(gIme, gPrezime,\' \', 
-        \' \',\' \',\' \',) like :uvjet 
-        ');
-        $izraz->bindParam('uvjet',$uvjet);
-        $izraz->execute();
-
-        return $izraz->fetchAll();
     }
 }
