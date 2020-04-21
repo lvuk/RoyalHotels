@@ -36,7 +36,7 @@ class ZaposlenikController extends AutorizacijaController
     public function promjeni()
     {
         // I OVDJE DOĐU SILNE KONTROLE
-        print_r($_POST);
+       
         Zaposlenik::update();
         $this->index();
     }

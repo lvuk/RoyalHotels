@@ -24,7 +24,7 @@ class RezervacijaController extends AutorizacijaController
     public function promjena()
     {
         $rezervacija = Rezervacija::read($_GET['ID_rezervacija']);
-        if(!$zaposlenik){
+        if(!$rezervacija){
             $this->index();
             exit;
         }
@@ -51,7 +51,7 @@ class RezervacijaController extends AutorizacijaController
             return;
         }
 
-        $IDNovaRezervacije=Rezervacija::create($_POST['hotel'],$_POST['gost']);
+        $IDNovaRezervacije=Rezervacija::create($_POST['hotel'],$_POST['hotel']);
         $rezervacija = Rezervacija::read($IDNovaRezervacije);
         $this->detalji($rezervacija);
 

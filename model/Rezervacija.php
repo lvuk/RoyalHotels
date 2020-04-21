@@ -63,9 +63,17 @@ class Rezervacija
     public static function update(){
         $veza = DB::getInstanca();
         $izraz=$veza->prepare('update rezervacija 
-        set rHotelID=:hotel,
-        rDatumOd=:datumod,rDatumDo=:datumdo,rSoba=:soba, rGostID=:gost,
-        rBrojGostiju=:brojgostiju, rPlaceno:placeno where ID_rezervacija=:ID_rezervacija');
+        set 
+        rHotelID=:hotel,
+        rDatumOd=:datumod,
+        rDatumDo=:datumdo,
+        rSoba=:soba, 
+        rGostID=:gost,
+        rBrojGostiju=:brojgostiju, 
+        rPlaceno=:placeno 
+        
+        where ID_rezervacija=:ID_rezervacija');
+        
         $izraz->execute([
             'hotel' => $_POST['hotel'],
             'datumod' => $_POST['datumod'],

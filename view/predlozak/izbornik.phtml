@@ -24,12 +24,9 @@
                 </li>
                 <?php if(isset($_SESSION['operater']) && $_SESSION['operater']->oUloga==='admin'):?>
                     <li><a href="/operater/index">Operateri</a></li>
-                <?php else:?>
-                    <li><a href="/nadzornaploca/profil">Profil</a></li>
                 <?php endif;?>
             <?php endif;?>
             <?php if(isset($_SESSION['operater']) && $_SESSION['operater']->oUloga!=='admin'):?>
-                <li><a href="/index/onama">O nama</a></li>
             <?php endif;?>
             <li><a href="/index/era">ERA</a></li>
             

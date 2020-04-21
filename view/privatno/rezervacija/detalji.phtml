@@ -33,26 +33,26 @@
             </select>
 
             <label for="datumod">Datum od</label>
-            <input type="date" id="datumod" name="datumod" value="<?php echo $rezervacija->rDatumDo ?>"">
+            <input type="datetime-local" id="datumod" name="datumod" value="<?php echo $rezervacija->rDatumDo ?>"">
             
             <label for="datumdo">Datum do</label>
-            <input type="date" id="datumdo" name="datumdo" value="<?php echo $rezervacija->rDatumDo ?>"">
+            <input type="datetime-local" id="datumdo" name="datumdo" value="<?php echo $rezervacija->rDatumDo ?>"">
 
             <label for="brojgostiju">Broj gostiju u sobi</label>
-            <input type="text" name="brojgostiju" id="brojgostiju" value="<?php echo $rezervacija->rBrojGostiju ?>">
+            <input type="number" name="brojgostiju" id="brojgostiju" value="<?php echo $rezervacija->rBrojGostiju ?>">
 
             <label for="placeno">Placeno</label>
-              <select name="placeno" id="placeno" value="Odaberi">
-                <option value="da">Da</option>
-                <option value="ne">Ne</option>
+              <select name="placeno" id="placeno" value="">
+                <option value="1">Da</option>
+                <option value="0">Ne</option>
               </select>
 
               <label for="soba">Soba</label>
-              <select name="soba" id="soba" value="Vrsta sobe">
-                <option value="jednokrevetna">Jednokrevetna</option>
-                <option value="dvokrevetna">Dvokrevetna</option>
-                <option value="trokrevetna">Trokrevetna</option>
-                <option value="cetverokrevetna">Cetverokrevetna</option>
+              <select name="soba" id="soba" value="">
+                <option value=1>Jednokrevetna</option>
+                <option value=2>Dvokrevetna</option>
+                <option value=3>Trokrevetna</option>
+                <option value=4>Cetverokrevetna</option>
               </select>
   
               <input type="hidden" name="ID_rezervacija" 
