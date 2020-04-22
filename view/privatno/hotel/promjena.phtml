@@ -38,7 +38,13 @@ action="/hotel/promjeni">
   </label>
 
   <label for="zvjezdice">Broj zvjezdica</label>
-  <select name="zvjezdice" id="zvjezdice">
+  <select name="zvjezdice" id="zvjezdice" value="<?php echo $hotel->hZvjezdice;?>">
+    <option value="<?php echo $hotel->hZvjezdice;?>">
+    <?php 
+      for($i=1;$i<=$hotel->hZvjezdice;$i++)
+        echo '*';
+    ?>
+    </option>
     <option value="1">*</option>
     <option value="2">**</option>
     <option value="3">***</option>
